@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => 'juanvladimir13/censo',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => null,
+        'type' => 'project',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        'bramus/router' => array(
+            'pretty_version' => '1.6.1',
+            'version' => '1.6.1.0',
+            'reference' => '55657b76da8a0a509250fb55b9dd24e1aa237eba',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../bramus/router',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'juanvladimir13/censo' => array(
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => null,
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'juanvladimir13/sqlite_database' => array(
+            'pretty_version' => 'v0.1.5',
+            'version' => '0.1.5.0',
+            'reference' => '999bb03f324abff9d7a03a4aa0a272a95df03fcc',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../juanvladimir13/sqlite_database',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unidades Educativas</title>
+  <link href="/assets/css/simple.css" rel="stylesheet">
+  <style>
+    .fiscal {
+      background-color: green;
+      color: white;
+      padding: 3px 25px;
+      border-radius: 5px;
+    }
+
+    .convenio {
+      background-color: red;
+      color: white;
+      padding: 3px 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="index.php">Lista estudiantes</a>
+      <a href="unidadeducativa.php">Unidades Educativas</a>
+    </nav>
+  </header>
+
+  <form action="unidadeducativa.php" method="post">
+    <label> SIE </label>
+    <input type="number" name="sie">
+
+    <label> Nombre </label>
+    <input type="text" name="nombre" style="text-transform: uppercase;">
+
+    <label> Dependencia </label>
+    <select name="dependencia">
+      <option value="FISCAL">FISCAL</option>
+      <option value="CONVENIO">CONVENIO</option>
+    </select>
+    <button type="submit">Agregar</button>
+  </form>
+
+  <hr>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>SIE</th>
+        <th>NOMBRE</th>
+        <th>DEPENDENCIA</th>
+      </tr>
+      <thead>
+
+      <tbody>
+        <?php foreach( $unidadesEducativas as $index => $ue): ?>
+        <tr>
+          <td><?= $index + 1 ?></td>
+          <td><?= $ue['sie'] ?></td>
+          <td><?= $ue['nombre'] ?></td>
+          <td>
+            <?php if ($ue['dependencia'] == 'FISCAL'): ?>
+            <span class="fiscal">
+              <?= $ue['dependencia'] ?>
+            </span>
+            <?php endif; ?>
+
+            <?php if ($ue['dependencia'] == 'CONVENIO'): ?>
+            <span class="convenio">
+              <?= $ue['dependencia'] ?>
+            </span>
+            <?php endif; ?>
+          </td>
+        </tr>
+        <?php endforeach; ?>
+    <tbody>
+  </table>
+</body>
+
+</html>

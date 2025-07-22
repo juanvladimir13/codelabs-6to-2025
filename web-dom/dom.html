@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook</title>
+</head>
+
+<body>
+  <button id="btnRead">Leer</button>
+  <p class="description">Estudiante</p>
+  <p class="description">Aplicad@</p>
+  <p id="description">Sobresaliente</p>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', (evt) => {
+      console.log('Documento cargado 100%');
+
+      const $btnRead = document.getElementById('btnRead');
+      $btnRead.textContent = 'Eliminar';
+      $btnRead.style = 'color: green';
+      console.log($btnRead);
+
+      const $inputFormClass = document.querySelector('#description');
+      console.log($inputFormClass);
+      $inputFormClass.remove();
+
+      const $inputsFormById = document.querySelectorAll('.description');
+      console.log($inputsFormById);
+    });
+  </script>
+</body>
+
+</html>

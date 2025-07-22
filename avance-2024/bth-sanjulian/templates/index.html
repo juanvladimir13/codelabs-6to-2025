@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lista de estudiantes de UE</title>
+  <link href="/assets/css/simple.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="index.php">Lista estudiantes</a>
+      <a href="unidadeducativa.php">Unidades Eductivas</a>
+    </nav>
+  </header>
+
+  <form action="/" method="post">
+    <label> UNIDADES EDUCATIVAS </label>
+    <select name="unidad_educativa_id">
+      <?php foreach ($unidadesEducativas as $ue ): ?>
+      <option value="<?= $ue['id'] ?>"
+        <?= ($unidadEducativaId ?? 0) == $ue['id'] ? 'selected' : '' ?>>
+        <?= $ue['nombre'] ?>
+      </option>
+      <?php endforeach; ?>
+    </select>
+    <button type="submit">Consultar</button>
+  </form>
+
+  <hr>
+  <?php if ($unidadEducativaId != 0): ?>
+    <h4> CODIGO UE <?=  $unidadEducativaId ?> </h4>
+    <p> Cantidad de estudiantes <?= count($estudiantes) ?> </p>
+  <?php endif; ?>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>REGISTRO</th>
+        <th>APELLIDOS</th>
+        <th>NOMBRES</th>
+      </tr>
+      <thead>
+
+      <tbody>
+        <?php foreach( $estudiantes as $index => $e): ?>
+        <tr>
+          <td><?= $index + 1 ?></td>
+          <td><?= $e['registro'] ?></td>
+          <td><?= $e['apellidos'] ?></td>
+          <td><?= $e['nombres'] ?></td>
+        </tr>
+        <?php endforeach; ?>
+    <tbody>
+  </table>
+</body>
+
+</html>
