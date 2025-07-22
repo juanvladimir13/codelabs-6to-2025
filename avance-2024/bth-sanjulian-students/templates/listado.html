@@ -1,0 +1,15 @@
+<!-- Grid Card -->
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <?php foreach ($estudiantes as $item): ?>
+  <div class="col">
+    <div class="card">
+      <img src="<?= $item['imagen'] ?? '' ?>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><?= $item['nombres'] ?></h5>
+        <p class="card-text"><?= $item['apellidos'] ?></p>
+      </div>
+    </div>
+  </div>
+  <?php endforeach; ?>
+</div>
+<!-- Grid Card -->

@@ -1,0 +1,13 @@
+<?php foreach ($notasBTH as $key => $nota ): ?>
+<p>
+  <?= $key + 1 ?>
+
+  <?php if ($nota['trimestre'] == '1'): ?>
+  Primer Trimestre:
+  <?php endif; ?>
+
+  <?= $nota['trimestre'] ?>
+  <?= $nota['nota'] ?>
+  <?= $nota['nota'] > 50 ? 'Promovido' : 'Retenido' ?>
+</p>
+<?php endforeach; ?>

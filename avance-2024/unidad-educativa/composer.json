@@ -1,0 +1,54 @@
+{
+    "name": "juanvladimir13/template-php",
+    "description": "PHP project skeleton",
+    "type": "project",
+    "version": "0.1.3",
+    "license": "MIT",
+    "homepage": "https://juanvladimir13.web.app/",
+    "authors": [
+        {
+            "name": "Juan Vladimir",
+            "email": "juanvladimir13@gmail.com",
+            "homepage": "https://juanvladimir13.web.app/"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.4",
+        "ext-sqlite3": "*",
+        "bramus/router": "^1.6",
+        "juanvladimir13/sqlite_database": "^0.1.5"
+    },
+    "repositories": [],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        },
+        "files": [
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "prepend-autoloader": false,
+        "platform": {
+            "php": "7.4"
+        }
+    },
+    "scripts": {
+        "start": "php -S localhost:8013 -t ./public",
+        "phpstan": "phpstan analyse --xdebug -c phpstan.neon",
+        "psalm": "psalm src",
+        "phpcs": "phpcs --colors --standard=PSR12 --severity=1 --tab-width=4 --report=summary src",
+        "phpcs-detail": "phpcs --colors --standard=PSR12 --severity=1 --tab-width=4 src",
+        "phpcs-fixer": "php-cs-fixer fix src --rules=@PSR12",
+        "post-create-project-cmd": [
+            "php -r \"copy('.env-dev.php', '.env');\""
+        ]
+    }
+}
